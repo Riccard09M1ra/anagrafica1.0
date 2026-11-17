@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Controllo Radio button Javascript</title>
+
+  <script type="text/javascript">
+
+    function stampa() {
+      let genere;
+      let nome = document.getElementById("fname").value;
+      let cognome = document.getElementById("lname").value;
+
+      for(i=0;i<document.getElementsByName("Genders").length;i++) {
+
+        if(document.getElementsByName("Genders")[i].checked){
+
+         genere = document.getElementsByName("Genders")[i].value   
+        }
+      }
+      document.getElementById("risp").innerHTML="<tr><td>"+nome+"</td><td>"+cognome+"</td><td>"+genere+"</td></tr>"
+
+    }
+  </script>
+</head>
+<body>
+
+  
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value=""><br><br>
+    
+    <label for="lname">Gender:</label><br>
+    <div style="margin-left:10px;">
+      <input type="radio" name="Genders" value="M">M<br>
+      <input type="radio" name="Genders" value="F">F<br>
+      <input type="radio" name="Genders" value="A">A<br>
+    </div>
+
+    <input type="button" value="Submit" onclick="stampa()">
+    <input type="reset" value="Reset">
+  
+
+  <table id="risp"></table>
+  
+  </body>
+</html>
